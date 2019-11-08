@@ -124,3 +124,4 @@ const makeRequest = async () => {
 
 동기 코드처럼 진행 가능
 
+** 참고 ㅣ https://joshua1988.github.io/web-development/javascript/js-async-await/

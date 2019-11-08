@@ -222,7 +222,7 @@ promise.then((data) => data.json) // resolve(data.json)와 동일한 결과
     })
 ```
 
-##프로미스(Promise) API
+## 프로미스(Promise) API
 
 ```javascript
 //기본 프로미스

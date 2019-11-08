@@ -37,7 +37,7 @@ var add3 = (x,y) => return x+y //함수의 내용이 return 밖에 없는 경우
 
 
 
-####화살표 함수의 다양한 표현 방법
+#### 화살표 함수의 다양한 표현 방법
 
 ```javascript
 
@@ -59,7 +59,7 @@ console.log(pow(10)); // 100
 
 
 
-###this 의 역할
+### this 의 역할
 
 function안에 있는 this와 화살표함수 안에있는 this는 다른 역할을 한다는 점이, 일반 함수화 화살표 함수의 가장 큰 차이점 입니다.
 
@@ -102,3 +102,47 @@ relationship1.logFriends();
 ```
 
 > 화살표 함수는 함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정된다. 동적으로 결정되는 일반 함수와는 달리 **화살표 함수의 this 언제나 상위 스코프의 this를 가리킨다.** 
+
+
+---
+
+## 호이스팅
+
+변수나 함수의 선언만 맨위로 끌어올려지는 상황.
+
+자바스크립트의 특징중 하나. 
+
+```javascript
+x = 2
+
+console.log(x) // 2
+
+var x = 0
+
+console.log(x) // 0
+```
+
+이는 호이스팅 때문에 다음과 같이 작동된다.
+
+```javascript
+var x;
+
+x = 2
+
+console.log(x); // 2
+
+x = 0;
+
+console.log(x) // 0
+```
+
+원래는 오류가 나는 상황인데도 에러가 나지 않는다!
+그렇기 때문에 코딩할때 조심해야 하고, var가 아닌 let, const를 쓰면 호이스팅을 막을 수 있다.
+
+```javascript
+x = 2
+
+console.log(x); // x is not defined!! error
+
+let x = 0
+```

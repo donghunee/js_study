@@ -4,18 +4,16 @@
 
 **클래스는 객체라고도 하며,** 속성과 메소드로 구성됩니다. 속성은 객체의 전용 변수이고 메소드는 객체의 전용 함수입니다. 멤버변수, 멤버함수라고도 합니다.
 
-이렇게 클래스로 포장하는 이유는 객체 단위로 코드를 그룹화 할 수 있으며 코드를 재사용하기 위해서 입니다.
+이렇게 클래스로 포장하는 이유는 객체 단위로 코드를 그룹화 할 수 있으며 코드를 재사용하기 위함 입니다.
 
 ```javascript
 // class 선언문
-// 이전에는 생성자 함수와 프로토타입, 클로저를 사용하여 객체 지향 프로그래밍을 구현했지만, ES6부터 class 가 등장하였고, 현재는 class 키워드를 사용하여 정의
+// 이전에는 생성자 함수와 프로토타입, 클로저를 사용하여 객체 지향 프로그래밍을 구현했지만, ES6에 class개념이 등장하면서 현재는 class 키워드를 사용하여 정의를합니다.
 
 let PersonClass = class {
-    // PersonType constructor와 같습니다.
     constructor(name) {
         this.name = name;
     }
-    // PersonType.prototype.sayName과 같습니다.
     sayName() {
         console.log(this.name);
     }
@@ -25,11 +23,9 @@ let person = new PersonClass("Nicholas");
 person.sayName();   // "Nicholas" 출력
 ```
 
->  프로토타입 문법으로 객체를 정의할 때에는 함수(객체)를 만든 뒤에 그 함수의 이름으로 생성자를 만들고, 프로토타입을 설정하고, 객체의 생성자를 변수에 담았다. sayHi 함수를 하나만 만들어 객체의 인스턴스들이 재활용하기 위해서 프로토타입 안에 정의해 주었다.
 
 
-
-클래스 몸체(class body)에는 메소드만 선언할 수 있다. 클래스 바디에 클래스 필드(멤버 변수)를 선언하면 문법 에러(SyntaxError)가 발생합니다. 따라서 멤버 변수의 선언과 초기화는 반드시 constructor 내부에서 해야 합니다.
+클래스 몸체(class body)에는 메소드만 선언할 수 있습니다. 클래스 바디에 클래스 필드(멤버 변수)를 선언하면 문법 에러(SyntaxError)가 발생합니다. 따라서 멤버 변수의 선언과 초기화는 반드시 constructor 내부에서 해야 합니다.
 
 ```javascript
 class Foo {
@@ -58,6 +54,7 @@ console.log(Foo);
 class Foo {}
 
 // 호이스팅(hoisting)이 일어나지 않습니다.
+// 호이스팅이란? .. 동훈오빠 정리~
 ```
 
 
@@ -78,7 +75,7 @@ me.sayHi(); // Hi! Lee
 
 ### 생성자(Constructor)
 
-**constructor**는 인스턴스를 생성하고 클래스 필드를 초기화하기 위한 특수한 메소드이다. 클래스에서 constructor 이름을 갖는 메소드는 하나여야 합니다.
+`constructor`는 인스턴스를 생성하고 클래스 필드를 초기화하기 위한 특수한 메소드입니다. 클래스에서 constructor 이름을 갖는 메소드는 하나여야 합니다.
 
 constructor는 생략이 가능합니다. constructor를 생략하면 클래스에 `constructor() {}`를 포함한 것과 동일하게 동작합니다. 즉, 빈 객체를 생성합니다. 따라서 인스턴스에 프로퍼티를 추가하려면 인스턴스를 생성한 이후, 프로퍼티를 동적으로 추가해야 합니다.
 
@@ -92,14 +89,13 @@ var Polygon = class {
         this.height = height2 * 2 ;
         this.width = width2 * 2;    
     }
-};
+}; // Uncaught SyntaxError: A class may only have one constructor
 ```
 
 
 
 ### setter/getter
 
-//3-object에서 다룸... 
 
 getter는 이름 그대로 무언가를 취득할 때 사용하므로 반드시 무언가를 반환해야 합니다. setter는 호출하는 것이 아니라 프로퍼티처럼 값을 할당하는 형식으로 사용하며 할당 시에 메소드가 호출됩니다. 
 
@@ -193,7 +189,7 @@ person1.subtract(person1.age, person2.age); // -1
 
 > static 메소드는 클래스의 인스턴스 (var a = new testFunc()) 필요없이 호출 가능합니다. 또한 클래스의 인스턴스에서 static 메소드를 호출 할 수 없습니다.
 
-*ES6 등장 이전의 static/prototype 사용법 :  https://jaeworld.github.io/2018-09-03/Javascript_static
+*ES6 등장 이전의 statkc/prototype 사용법 :  https://jaeworld.github.io/2018-09-03/Javascript_static
 
 
 

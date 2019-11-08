@@ -216,7 +216,7 @@ getCandy()
 
 
 
-###배열에서 비구조화 할당
+### 배열에서 비구조화 할당
 
 ```javascript
 var array = ['nodejs', {}, 10, true]; 
@@ -245,8 +245,8 @@ const [node, obj, , bool] = array;
 ```javascript
 // 1
 const array = ["nodejs", {}, 10, true];
-const [node, obj, bool] = array; //"node" {} 10
-const [node, obj, ...bool] = array; 
+const [node, obj, bool] = array; //"nodejs" {} 10
+const [node, obj, ...bool] = array; // "nodejs" {} [10,true]
 
 // 2
 const n = (x,...y) => console.log(x,y)n(4,5,6,7,8)
